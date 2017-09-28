@@ -20,12 +20,14 @@ module.exports = function zeros(expression) {
     }
   }
 
+  
   oneF.forEach(x => oneFactZeros(x));
 
-  if  (twoF.some(el => el%2 === 0)) {
+  if  (twoF.some(el => el%2 === 0) || oneF.length) {
     twoF.forEach(x => twoFactZeros(x));
   }
-  console.log(result);
+
+
   return result;
 
 }
