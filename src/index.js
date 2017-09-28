@@ -1,3 +1,20 @@
 module.exports = function zeros(expression) {
   // your solution
+
+  let result = 0;
+  let oneF = expression.split('*').filter(el => (el.slice(-2) !== '!!')).map(el => parseInt(el,10));
+  let twoF = expression.split('*').filter(el => (el.slice(-2) === '!!')).map(el => parseInt(el,10));
+
+  function oneFactZeros(x) {
+    result = result + (Math.floor(x/5)+Math.floor(x/25));
+  } 
+
+  function twoFactZeros() {
+
+  }
+
+  oneF.forEach(x => oneFactZeros(x));
+  console.log(result);
+  return result;
+
 }
